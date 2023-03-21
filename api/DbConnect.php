@@ -3,10 +3,10 @@
 	* Database Connection
 	*/
 	class DbConnect {
-		private $server = 'localhost';
+		private $server = 'mysql';
 		private $dbname = 'react_crud';
 		private $user = 'root';
-		private $pass = '';
+		private $pass = 'root';
 
 		public function connect() {
 			try {

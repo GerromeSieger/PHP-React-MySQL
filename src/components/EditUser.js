@@ -14,7 +14,7 @@ export default function ListUser() {
     }, []);
 
     function getUser() {
-        axios.get(`http://localhost:8888/api/user/${id}`).then(function(response) {
+        axios.get(`http://app.ifahsvictor.com/api/user/${id}`).then(function(response) {
             console.log(response.data);
             setInputs(response.data);
         });
@@ -28,7 +28,7 @@ export default function ListUser() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.put(`http://localhost:8888/api/user/${id}/edit`, inputs).then(function(response){
+        axios.put(`http://app.ifahsvictor.com/api/user/${id}/edit`, inputs).then(function(response){
             console.log(response.data);
             navigate('/');
         });
