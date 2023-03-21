@@ -35,13 +35,19 @@ jobs:
         with:
           context: .
           push: true
-          tags: gerrome/php-react-mysql_client:1
+          tags: gerrome/php-react-mysql_client:1.1
 
-      - name: Build and push frontend
+      - name: Build and push db
         uses: docker/build-push-action@v3
         with:
           context: ./mysql
           push: true
           tags: gerrome/php-react-mysql_db:1          
 
+      - name: Build and push nginx
+        uses: docker/build-push-action@v3
+        with:
+          context: ./nginx
+          push: true
+          tags: gerrome/php-react-mysql_nginx:1
 
