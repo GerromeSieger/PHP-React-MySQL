@@ -3,14 +3,14 @@
 	* Database Connection
 	*/
 	class DbConnect {
-		private $server = 'mysql://root:root@mysql:33060/react_crud';
+		private $server = 'mysql://root:root@mysql:3306/react-crud';
 		private $dbname = 'react_crud';
 		private $user = 'root';
 		private $pass = 'root';
 
 		public function connect() {
 			try {
-				$conn = new PDO('mysql://root:root@mysql:33060/react_crud');
+				$conn = new PDO('mysql:host=' .$this->server .';dbname=' . $this->dbname, $this->user, $this->pass);
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				return $conn;
 			} catch (\Exception $e) {
